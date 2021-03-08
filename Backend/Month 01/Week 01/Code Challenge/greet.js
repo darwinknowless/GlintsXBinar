@@ -19,11 +19,23 @@ const rl = readline.createInterface({
  * const currentDate = new Date();
  * const currentYear = currentDate.getFullYear();
  * */
+
 function greet(name, address, birthday) {
   // Insert your code here!
-  console.log(`hello, ${name}! Looks like you're ${birthday} years old, and your lived in ${address}`);
-  
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
+  const age = currentYear - birthday;
+  console.log(
+    "Hello, " +
+      name +
+      "! Looks like you're " +
+      age +
+      " years old, and you lived in " +
+      address +
+      "!"
+  );
 }
+
 
 // DON'T CHANGE
 console.log("Goverment Registry\n");
