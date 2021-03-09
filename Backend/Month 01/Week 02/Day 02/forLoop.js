@@ -6,6 +6,6 @@ for (let i = 0; i < 5; i ++) {
     console.log(i);
 }
 
-// let a =1;
+// let a = 1;
 // a++;
 // consoloe.log(a);
