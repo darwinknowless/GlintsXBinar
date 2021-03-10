@@ -1,3 +1,4 @@
+// Bikin fungsi sesuai flowchart
 let fridge = ["Apple", "Wortel", "Milk", "Orange", "Leech", "Cabbage", "Egg"];
 
 function goToKitchen() {
