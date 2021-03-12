@@ -1,29 +1,36 @@
-/*
-*ASSIGNMENT
-*Create an array that contains ["tomato", "broccoli", "kale", "cabbage", "apple"]
-*Loop the array to print something like this "tomato is a healthy food, it's definitely worth to eat."
-*Exclude apple because apple is not a Vegetable.
-*/
+let fridge = ["tomato", "brocolli", "kale", "cabbage", "apple"];
 
-// Declare array
-let veggie = ["tomato", "broccoli", "kale", "cabbage", "apple"];
+// Manual
+for (var i = 0; i < fridge.length - 1; i++) {
+  console.log(
+    `${fridge[i]} is a healthy food, it's definitely worth to eat!`
+  );
+}
+console.log("===========================================");
 
-// manual ways
-for (var i = 0; i < veggie.length; i++) {
+// Apple is not vegetable
+for (var i = 0; i < fridge.length; i++) {
+  if (fridge[i] == "apple") {
+    console.log(`${fridge[i]} isn't vegetable!`);
+  } else {
     console.log(
-        `${veggie[i]} is healthy food, it's definitely worth to eat's!`
+      `${fridge[i]} is a healthy food, it's definitely worth to eat!`
     );
+  }
 }
-console.log("======================================================================");
+console.log("===========================================");
 
-// Apple is not veggie
-for (var i = 0; i < veggie.length; i++) {
-    if (veggie[i] == "apple") {
-        console.log("Apple isn't veggie");
-    } else {
-        console.log(
-            `${veggie[i]} is healthy food, it's definitely worth to eat's!`
-        );
-    }
+// Using filter and map
+let fridgeFilter = fridge.filter((vegetable) => vegetable !== "apple");
+fridgeFilter.map((vegetable) =>
+  console.log(`${vegetable} is a healthy food, it's definitely worth to eat!`)
+);
+console.log("===========================================");
+
+// Using pop
+fridge.pop();
+for (var i = 0; i < fridge.length; i++) {
+  console.log(
+    `${fridge[i]} is a healthy food, it's definitely worth to eat!`
+  );
 }
-
