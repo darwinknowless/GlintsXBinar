@@ -21,7 +21,7 @@ for (let i = 0; i < arr.length; i++) {
 
 let arrMap2 = arr.map((el, index) => el * 2);
 let arrMap3 = arr.map((el, index) => {
-  //   console.log(index, "--index dalam map");
+//   console.log(index, "--index dalam map");
   if (index > 1) return el * 2;
 });
 
