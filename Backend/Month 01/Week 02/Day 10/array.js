@@ -1,6 +1,7 @@
 let fridge = ["Apple", "Wortel", "Milk", "Orange", "Leech", "Cabbage"];
   
 console.log(fridge.includes("Apple")) // true because Apple exist
+console.log(fridge.includes("Apple" || "Cabbage")) // true because Apple exist
 console.log(fridge.includes("Banana")) // false banana doesnt exist
 
 // Manual case-insensetive
