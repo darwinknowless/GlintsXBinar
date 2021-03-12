@@ -14,6 +14,7 @@ for (var i = 0; i < veggie.length; i++) {
         `${veggie[i]} is healthy food, it's definitely worth to eat's!`
     );
 }
+console.log("======================================================================");
 
 // Apple is not veggie
 for (var i = 0; i < veggie.length; i++) {
