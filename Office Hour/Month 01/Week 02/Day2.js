@@ -28,10 +28,10 @@ for (let i = 1; i <= 10; i++) {
   }
   
   // while
-  let i = 1;
-  while (i <= 10) {
-    //   console.log(i);
-    i++;
+  let i = 2;
+  let isMonday = false;
+  while (isMonday == false) {
+    if (i == 2) isMonday = true;
   }
   
   // console.log(process.argv[2], process.argv[3]);
@@ -76,8 +76,6 @@ for (let i = 1; i <= 10; i++) {
     return invertedArr;
   }
   
-  console.log(invertMap([1, 2, 3, 4]));
-  
   // sum of arrays
   function sumArr(arr) {
     // container
@@ -93,6 +91,7 @@ for (let i = 1; i <= 10; i++) {
   
   // array map
   function invertMap(arr) {
-    return arr.map((el) => -el);
+    return arr.map((el) => el * 10);
   }
   
+  console.log(invertMap([1, 2, 3, 4]));
