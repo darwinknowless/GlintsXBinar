@@ -11,17 +11,43 @@ function clean(data) {
 }
 
 // Should return array
-function sortAscending(data) {
+function sortAscending(inputArr) {
   // Code Here
-
-  return data;
+  inputArr = clean(inputArr); // hapus null
+  let len = inputArr.length; // nyari tau panjang array
+  let checked;
+  do { // fungsi looping ascending
+      checked = false;
+      for (let i = 0; i < len; i++) {
+          if (inputArr[i] > inputArr[i + 1]) {
+              let tmp = inputArr[i];
+              inputArr[i] = inputArr[i + 1];
+              inputArr[i + 1] = tmp; // "temp" untuk simpan data smentara hasil pergeseran loop
+              checked = true;
+          }
+      }
+  } while (checked);
+  return inputArr;
 }
 
 // Should return array
-function sortDecending(data) {
+function sortDecending(inputArr) {
   // Code Here
-
-  return data;
+  inputArr = clean(inputArr); // hapus null
+  let len = inputArr.length;
+  let checked;
+  do { // fungsi looping descending
+      checked = false;
+      for (let i = 0; i < len; i++) {
+          if (inputArr[i] < inputArr[i + 1]) {
+              let tmp = inputArr[i];
+              inputArr[i] = inputArr[i + 1];
+              inputArr[i + 1] = tmp; // "temp" untuk simpan data smentara hasil pergeseran loop
+              checked = true;
+          }
+      }
+  } while (checked);
+  return inputArr;
 }
 
 // DON'T CHANGE
