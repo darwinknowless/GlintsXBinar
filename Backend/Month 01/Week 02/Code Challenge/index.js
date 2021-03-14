@@ -1,5 +1,5 @@
-const data = require('./lib/arrayFactory.js');
-const test = require('./lib/test.js');
+const data = require('./lib/arrayFactory.js'); // linked to file inside lib
+const test = require('./lib/test.js'); // linked to file inside lib
 
 /*
  * Code Here!
@@ -7,20 +7,20 @@ const test = require('./lib/test.js');
 
 // Optional
 function clean(data) {
-  return data.filter(i => typeof i === 'number');
+  return data.filter(i => typeof i === 'number'); // fungsi clean null
 }
 
 // Should return array
 function sortAscending(inputArr) {
   // Code Here
   inputArr = clean(inputArr); // hapus null
-  let len = inputArr.length; // nyari tau panjang array
+  let len = inputArr.length; // nyari tau jumlah/banyak array
   let checked;
   do { // fungsi looping ascending
       checked = false;
       for (let i = 0; i < len; i++) {
-          if (inputArr[i] > inputArr[i + 1]) {
-              let tmp = inputArr[i];
+          if (inputArr[i] > inputArr[i + 1]) { // Proses swap
+              let tmp = inputArr[i]; // "temp" untuk simpan data smentara
               inputArr[i] = inputArr[i + 1];
               inputArr[i + 1] = tmp; // "temp" untuk simpan data smentara hasil pergeseran loop
               checked = true;
