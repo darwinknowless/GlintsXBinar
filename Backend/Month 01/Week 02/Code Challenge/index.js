@@ -20,7 +20,7 @@ function sortAscending(inputArr) {
       checked = false;
       for (let i = 0; i < len; i++) {
           if (inputArr[i] > inputArr[i + 1]) { // Proses swap
-              let tmp = inputArr[i]; // "temp" untuk simpan data smentara
+              let tmp = inputArr[i]; // "temp" untuk simpan data smentara hasil pergeseran
               inputArr[i] = inputArr[i + 1];
               inputArr[i + 1] = tmp; // "temp" untuk simpan data smentara hasil pergeseran loop
               checked = true;
