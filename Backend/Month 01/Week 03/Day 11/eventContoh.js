@@ -3,8 +3,11 @@ const EventEmitter = require('events'); // Import event from module
 const my = new EventEmitter(); // Declare new event
 
 // Event listener
-my.on("Some Event", function() { // Function bisa ditulis atau di ganti "=>"
-    console.log("Some Event Happened")
+function masIrvan() {
+    console.log("Mas Irvan");
+}
+my.on("Mas Irvan", () => { // Function bisa ditulis atau di ganti "=>"
+    console.log("Halo Mas Irvan");
   })
 
 my.emit("Some Event"); // Event emitter
