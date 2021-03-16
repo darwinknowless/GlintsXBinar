@@ -1,4 +1,4 @@
-class Person { // class
+class Person { // classnya : Person
     // Static Properties // Properties yang dimiliki semua class
     static isAlive = true; 
     // Constructor & Instance properties
