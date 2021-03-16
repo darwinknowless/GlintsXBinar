@@ -9,12 +9,24 @@ class Person { // class
       this.nickName = nickName;
     }
 
+    // Instanc method
     walk() {
         console.log(` ${this.name} is walking!`); // this.name : untuk manggil constructor
     }
-    
+    // Instanc method
     run() {
         console.log(` ${this.nickName} is running!`);
+    }
+
+    // Instance method that calling another function
+    jogging() {
+        this.walk();
+        this.run();
+    }
+
+    // Static method
+    static isEating() {
+        console.log("Someone is eating!");
     }
 }
 
@@ -30,13 +42,25 @@ let person2 = new Person("Riyo Ginting", "Medan", false, "Riyo"); // Declare obj
 */
 console.log("========== BATAS ==========");
 person1.walk();
+// Instanc method
+// Harus di deklarasikan sebagai object dulu
 person2.run();
 
 console.log("========== BATAS ==========");
 console.log(person1); // Call all 
 console.log(person2);
-console.log(person1.name); // example call only name
 
 console.log("========== BATAS ==========");
-console.log(person1.isAlive); // Can not call static properties
+// example call only name
+console.log(person1.name); 
+
+console.log("========== BATAS ==========");
+// console.log(person1.isAlive); // Can not call static properties
 console.log(Person.isAlive); // Static properties can only call by class directly
+
+console.log("========== BATAS ==========");
+// person1.isEating(); // Can not call static method
+Person.isEating(); //Static method can only call by class directly
+
+console.log("========== BATAS ==========");
+person1.jogging();
