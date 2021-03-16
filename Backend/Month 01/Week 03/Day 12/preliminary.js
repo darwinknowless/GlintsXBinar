@@ -1,7 +1,7 @@
 class Person { // class
-    
-    static isAlive = true; // Tetap / Static Properties / Properties yang dimiliki semua class
-  
+    // Static Properties // Properties yang dimiliki semua class
+    static isAlive = true; 
+    // Constructor & Instance properties
     constructor(name, address, isMarried, nickName) { // Properties
       this.name = name; // properties milik object
       this.address = address;
