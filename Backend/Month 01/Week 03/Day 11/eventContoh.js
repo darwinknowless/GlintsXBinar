@@ -1,17 +1,24 @@
-const EventEmitter = require('events'); // Import event from module
- // Initialize an instance because it is a class
+const EventEmitter = require("events"); // Import events module
 const my = new EventEmitter(); // Declare new event
 
-// Event listener
+// Event Listener
 function masIrvan() {
-    console.log("Mas Irvan");
+  console.log("Mas Irvan");
 }
-my.on("Mas Irvan", () => { // Function bisa ditulis atau di ganti "=>"
-    console.log("Halo Mas Irvan");
-  })
 
-my.emit("Some Event"); // Event emitter
-my.emit("Some Event"); // Ebisa di panggil 2x, sama seperti function
+my.on("Mas Irvan", () => {
+  console.log("Halo, Mas Irvan!");
+});
+
+my.on("Mas Ebit", () => {
+  console.log("Halo, Mas Ebit!");
+});
+
+masIrvan();
+
+my.emit("Mas Ebit"); // Event Emitter
+my.emit("Mas Irvan");
+
 // my.emit("Some Event");
 // Output: Some Event Happened
 // on === emit (String-nya harus sama persis)
