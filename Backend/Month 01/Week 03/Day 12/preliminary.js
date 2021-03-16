@@ -50,11 +50,6 @@ let person2 = new Person("Riyo Ginting", "Medan", false, "Riyo"); // Declare obj
      nickName : "Ebit"
    }
 */
-console.log("========== BATAS ==========");
-// Instance method
-// Harus di deklarasikan sebagai object dulu
-person1.walk();
-person2.run();
 
 console.log("========== BATAS ==========");
 // Call all properties
@@ -64,6 +59,12 @@ console.log(person2);
 console.log("========== BATAS ==========");
 // example call only name (one properties)
 console.log(person1.name); 
+
+console.log("========== BATAS ==========");
+// Instance method
+// Harus di deklarasikan sebagai object dulu
+person1.walk();
+person2.run();
 
 console.log("========== BATAS ==========");
 // console.log(person1.isAlive); // Can not call static properties
