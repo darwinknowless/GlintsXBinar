@@ -4,6 +4,7 @@
 
 const data = [];
 const randomNumber = Math.floor(Math.random() * 100);
+// (math.floor) untuk ngilangin decimal dari angka
 
 function createArray() {
   for (let i = 0; i < randomNumber; i++) {
