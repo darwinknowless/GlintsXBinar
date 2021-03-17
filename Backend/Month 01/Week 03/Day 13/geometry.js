@@ -1,5 +1,9 @@
 class Geometry {
     constructor(name, type) {
+    // Abstract class : Kelas Abstract tidak bisa di declare tapi bisa menjadi parents
+    if (this.constructor == Geometry) {
+        throw new Error("Can not declare object!");
+    }
         this.name = name;
         this.type = type;
     }
