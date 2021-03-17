@@ -12,12 +12,6 @@ class Square extends TwoDimention {
       super.introduce();
       console.log(`This is ${this.name}`);
     }
-  
-    // Overloading method
-    calculateArea(message) {
-      super.calculateArea();
-      console.log(`${message}: ${this.length * this.length}`);
-    }
 }
   
 let squareOne = new Square(11);

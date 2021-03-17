@@ -12,7 +12,4 @@ class TwoDimention extends Geometry {
     }
 }
 
-let tryTwoD = new TwoDimention("Two Dimention");
-tryTwoD.introduce();
-
 module.exports = TwoDimention;
