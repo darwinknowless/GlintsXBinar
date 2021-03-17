@@ -6,13 +6,20 @@ class Square extends TwoDimention {
 
       this.length = length;
     }
-  
+    /*
     // Overriding method
     introduce() {
       super.introduce();
       console.log(`This is ${this.name}`);
     }
+    */
+
+    // Overloading method
+    introduce(who) {
+      super.introduce();
+      console.log(`${who}, This is ${this.name}`);
+    }
 }
   
 let squareOne = new Square(11);
-squareOne.introduce();
+squareOne.introduce("Darwin");
