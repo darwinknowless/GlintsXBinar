@@ -3,7 +3,7 @@ const TwoDimention = require("./twoDimention");
 class Square extends TwoDimention {
     constructor(length) {
       super("Square");
-
+      
       this.length = length;
     }
     /*
@@ -17,6 +17,7 @@ class Square extends TwoDimention {
     // Overloading method
     introduce(who) {
       super.introduce();
+      // fungsi "super" manggil function/properti di parents
       console.log(`${who}, This is ${this.name}`);
     }
 }
