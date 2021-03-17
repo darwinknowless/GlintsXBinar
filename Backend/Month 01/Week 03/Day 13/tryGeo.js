@@ -1,4 +1,4 @@
-const { Square, Rectangle, Triangle } = require("./geometry");
+const { Square, Rectangle, Triangle, Cube } = require("./geometry");
 
 console.log(" = = = = = = = = = = SQUARE = = = = = = = = = = ");
 
@@ -18,5 +18,9 @@ let triangleOne = new Triangle(15, 30);
 triangleOne.calculateArea();
 triangleOne.calculateCircumference();
 
+console.log(" = = = = = = = = = = CUBE = = = = = = = = = = ");
 
+let cubeOne = new Cube(30);
+cubeOne.calculateArea();
+cubeOne.calculateCircumference();
 

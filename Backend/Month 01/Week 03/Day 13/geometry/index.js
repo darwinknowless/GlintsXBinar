@@ -1,5 +1,9 @@
+// 2D
 const Square = require("./square");
 const Rectangle = require("./rectangle");
 const Triangle = require("./triangle");
 
-module.exports = { Square, Rectangle, Triangle };
+// 3D
+const Cube = require("./cube");
+
+module.exports = { Square, Rectangle, Triangle, Cube };
