@@ -28,7 +28,7 @@ class Cube extends ThreeDimention {
     }
 }
   
-// let cubeOne = new Tube(11);
+// let cubeOne = new Cube(11);
 // cubeOne.calculateArea();
 // cubeOne.calculateCircumference();
 
