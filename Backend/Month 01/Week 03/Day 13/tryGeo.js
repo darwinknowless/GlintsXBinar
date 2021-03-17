@@ -25,23 +25,23 @@ console.log(" = = = = = = = = = = THREE DIMENTION = = = = = = = = = = ");
 console.log(" = = = = = = = = = = BEAM = = = = = = = = = = ");
 
 let beamOne = new Beam(10, 6, 4);
+beamOne.calculateVolume();
 beamOne.calculateArea();
-beamOne.calculateCircumference();
 
 console.log(" = = = = = = = = = = CUBE = = = = = = = = = = ");
 
 let cubeOne = new Cube(10);
+cubeOne.calculateVolume();
 cubeOne.calculateArea();
-cubeOne.calculateCircumference();
 
 console.log(" = = = = = = = = = = TUBE = = = = = = = = = = ");
 
 let tubeOne = new Tube(7, 21);
+tubeOne.calculateVolume();
 tubeOne.calculateArea();
-tubeOne.calculateCircumference();
 
 console.log(" = = = = = = = = = = CONE = = = = = = = = = = ");
 
 let coneOne = new Cone(7, 21);
+coneOne.calculateVolume();
 coneOne.calculateArea();
-coneOne.calculateCircumference();

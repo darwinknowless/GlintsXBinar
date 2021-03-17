@@ -16,22 +16,22 @@ class Cone extends ThreeDimention {
     }
 
     // Overridding
-    calculateArea() {
-        super.calculateArea();
-        let area = (1 / 3) * (Math.PI * (this.radius * this.radius) * this.height);
-        console.log(`${this.name} area is ${area} cm3 \n`);
+    calculateVolume() {
+        super.calculateVolume();
+        let volume = (1 / 3) * (Math.PI * (this.radius * this.radius) * this.height);
+        console.log(`${this.name} area is ${volume} cm3 \n`);
     }
 
-    calculateCircumference() {
-        super.calculateCircumference();
-        let circumference = (Math.PI *(this.radius * this.radius)) + (Math.PI * this.radius * (Math.sqrt((this.radius * this.radius)+(this.height * this.height))));
+    calculateArea() {
+        super.calculateArea();
+        let area = (Math.PI *(this.radius * this.radius)) + (Math.PI * this.radius * (Math.sqrt((this.radius * this.radius)+(this.height * this.height))));
 
-        console.log(`${this.name} area is ${circumference} cm2 \n`);
+        console.log(`${this.name} area is ${area} cm2 \n`);
     }
 }
   
-// let coneOne = new Cone(11, 12);
+// let coneOne = new Cone(7, 21);
+// coneOne.calculateVolume();
 // coneOne.calculateArea();
-// coneOne.calculateCircumference();
 
 module.exports = Cone;

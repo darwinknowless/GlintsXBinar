@@ -16,12 +16,12 @@ class ThreeDimention extends Geometry {
         console.log(`This is ${this.type}!`);
     }
 
-    calculateArea() {
-        console.log(`${this.name} Area!`);
+    calculateVolume() {
+        console.log(`${this.name} Volume!`);
     }
 
-    calculateCircumference() {
-        console.log(`${this.name} Circumference`);
+    calculateArea() {
+        console.log(`${this.name} Area!`);
     }
 }
 

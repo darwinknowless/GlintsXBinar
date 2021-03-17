@@ -16,22 +16,22 @@ class Beam extends ThreeDimention {
     }
 
     // Overridding
-    calculateArea() {
-        super.calculateArea();
-        let area = this.length * this.width * this.height;
-        console.log(`${this.name} area is ${area} cm3 \n`);
+    calculateVolume() {
+        super.calculateVolume();
+        let volume = this.length * this.width * this.height;
+        console.log(`${this.name} area is ${volume} cm3 \n`);
     }
 
-    calculateCircumference() {
-        super.calculateCircumference();
-        let circumference = 2 * ((this.length * this.width) + (this.length * this.height ) + (this.width * this.height));
+    calculateArea() {
+        super.calculateArea();
+        let area = 2 * ((this.length * this.width) + (this.length * this.height ) + (this.width * this.height));
 
-        console.log(`${this.name} area is ${circumference} cm2 \n`);
+        console.log(`${this.name} area is ${area} cm2 \n`);
     }
 }
   
-// let beamOne = new Beam(11, 12, 13);
+// let beamOne = new Beam(10, 6, 4);
+// beamOne.calculateVolume();
 // beamOne.calculateArea();
-// beamOne.calculateCircumference();
 
 module.exports = Beam;

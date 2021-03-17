@@ -14,22 +14,22 @@ class Cube extends ThreeDimention {
     }
 
     // Overridding
-    calculateArea() {
-        super.calculateArea();
-        let area = this.length ** 3;
-        console.log(`${this.name} area is ${area} cm3 \n`);
+    calculateVolume() {
+        super.calculateVolume();
+        let volume = this.length ** 3;
+        console.log(`${this.name} area is ${volume} cm3 \n`);
     }
 
-    calculateCircumference() {
-        super.calculateCircumference();
-        let circumference = 6 * this.length ** 2;
+    calculateArea() {
+        super.calculateArea();
+        let area = 6 * this.length ** 2;
 
-        console.log(`${this.name} area is ${circumference} cm2 \n`);
+        console.log(`${this.name} area is ${area} cm2 \n`);
     }
 }
   
-// let cubeOne = new Cube(11);
+// let cubeOne = new Cube(10);
+// cubeOne.calculateVolume();
 // cubeOne.calculateArea();
-// cubeOne.calculateCircumference();
 
 module.exports = Cube;

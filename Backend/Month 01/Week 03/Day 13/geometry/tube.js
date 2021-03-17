@@ -16,22 +16,22 @@ class Tube extends ThreeDimention {
     }
 
     // Overridding
-    calculateArea() {
-        super.calculateArea();
-        let area = Math.PI * (this.radius * this.radius) * this.height;
-        console.log(`${this.name} area is ${area} cm3 \n`);
+    calculateVolume() {
+        super.calculateVolume();
+        let volume = Math.PI * (this.radius * this.radius) * this.height;
+        console.log(`${this.name} area is ${volume} cm3 \n`);
     }
 
-    calculateCircumference() {
-        super.calculateCircumference();
-        let circumference = 2 * (Math.PI * this.radius * (this.radius + this.height));
+    calculateArea() {
+        super.calculateArea();
+        let area = 2 * (Math.PI * this.radius * (this.radius + this.height));
 
-        console.log(`${this.name} area is ${circumference} cm2 \n`);
+        console.log(`${this.name} area is ${area} cm2 \n`);
     }
 }
   
-// let tubeOne = new Tube(11, 12, 13);
+// let tubeOne = new Tube(7, 21);
+// tubeOne.calculateVolume();
 // tubeOne.calculateArea();
-// tubeOne.calculateCircumference();
 
 module.exports = Tube;
