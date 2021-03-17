@@ -5,7 +5,12 @@ class Geometry {
     }
 
     introduce() {
-        console.log(`This is Geometry!`);
+        this.#accessIntroduce();
+    }
+
+    // Private function
+    #accessIntroduce() {
+        console.log("This is Geometry");
     }
 }
 
