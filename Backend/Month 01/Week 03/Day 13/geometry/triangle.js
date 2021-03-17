@@ -26,7 +26,7 @@ class Triangle extends TwoDimention {
     super.calculateCircumference();
     let circumference = 3 * this.base;
 
-    console.log(`${this.name} area is ${circumference} cm \n`);
+    console.log(`${this.name} area is ${circumference} cm2 \n`);
   }
 }
 

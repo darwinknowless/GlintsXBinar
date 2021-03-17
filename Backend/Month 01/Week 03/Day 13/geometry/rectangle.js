@@ -26,7 +26,7 @@ class Rectangle extends TwoDimention {
     super.calculateCircumference();
     let circumference = 2 * (this.length + this.width);
 
-    console.log(`${this.name} area is ${circumference} cm \n`);
+    console.log(`${this.name} area is ${circumference} cm2 \n`);
   }
 }
 
