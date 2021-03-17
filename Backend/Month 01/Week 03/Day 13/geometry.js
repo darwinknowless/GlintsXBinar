@@ -10,3 +10,4 @@ class Geometry {
 }
 
 module.exports = Geometry;
+// agar class Geometry bisa di pakai oleh file lain
