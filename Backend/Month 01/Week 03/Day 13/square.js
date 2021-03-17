@@ -17,7 +17,7 @@ class Square extends TwoDimention {
     // Overloading method
     introduce(who) {
       super.introduce();
-      // fungsi "super" manggil function/properti di parents
+      // fungsi "super" manggil function/properti/constructor di parents
       console.log(`${who}, This is ${this.name}`);
     }
 }
