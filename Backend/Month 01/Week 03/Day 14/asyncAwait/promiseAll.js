@@ -18,7 +18,7 @@ const readAllFiles = async () => { // async : agar fungsi await bisa jalan
         // let content3 = content1 + content2;
         // console.log(content3);
 
-        // Promise all
+        // Promise all ( mengambil data dari luar & yg butuh await)
         let data = await Promise.all([
             readFile("./contents/content1.txt", "utf-8"),
             readFile("./contents/content2.txt", "utf-8"),
