@@ -5,7 +5,7 @@ function calculate(x, y) {
 
 console.log(calculate(10, 11));
 
-// Arrow function
+// Arrow function - > sering di pakai di Frontend react
 const calc = (x, y) => {
     return x * y;
 }
