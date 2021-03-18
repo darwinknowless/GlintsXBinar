@@ -18,3 +18,6 @@ const calcu = (x) => (y) => (z) => {
 }
 
 console.log(calcu(10)(11)(12));
+
+// Arrow function return
+const cal = (x, y) => x * y; // => x * y adalah return dari cal 
