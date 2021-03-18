@@ -13,7 +13,7 @@ const readFile = (file, option) =>
 readFile("./contents/content1.txt", "utf-8") // Focus on this : from here
     .then((content1) => {
         console.log(content1);
-        return readFile("./contents/content10.txt", "utf-8");
+        return readFile("./contents/content11.txt", "utf-8");
     })
     .then((content2) => {
         console.log(content2);
