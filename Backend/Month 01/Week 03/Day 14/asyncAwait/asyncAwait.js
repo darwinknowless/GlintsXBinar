@@ -17,7 +17,6 @@ const readAllFiles = async () => { // async : agar fungsi await bisa jalan
         let content2 = await readFile("./contents/content2.txt", "utf-8");
         let content3 = content1 + content2;
         console.log(content3);
-
     } catch (e) { // catch : mirip if else dengan benefit mengecek error
         console.log("It's error!");
     }
