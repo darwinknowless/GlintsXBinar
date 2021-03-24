@@ -28,4 +28,6 @@ Follow this step before start
 
 8. Buka postman bikin folder Day 18
     -- add request 
-    -- bikin get all
+    -- bikin get all "http://localhost:3000/transaksi"
+    -- save, lalu test 
+    -- klik send
