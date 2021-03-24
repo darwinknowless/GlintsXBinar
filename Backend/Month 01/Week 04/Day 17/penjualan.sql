@@ -107,6 +107,7 @@ SELECT * FROM pelanggan ORDER BY nama DESC LIMIT 2;
 /* END SELECT LIMIT */
 
 /* JOIN */
+-- Saat join liat relasinya dulu
 SELECT t.id, p.nama as nama_pelanggan, b.nama as nama_barang, pem.nama as nama_pemasok, b.harga, t.waktu, t.jumlah, t.total
 FROM transaksi t
 JOIN barang b ON t.id_barang = b.id
