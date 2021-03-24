@@ -19,3 +19,13 @@ Follow this step before start
 
 5. Dalam folder controllers buat transaksiController.js
 
+6. Dalam folder moduls buat index.js untuk buat connection
+
+7. setelah semuanya dibikin dan dikoneksikan satu sama lain
+
+8. Run VS Code : 
+    -- npm run dev
+
+8. Buka postman bikin folder Day 18
+    -- add request 
+    -- bikin get all
