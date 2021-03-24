@@ -2,25 +2,20 @@ Follow this step before start
 1. Configuration
     >> install module from npm
         -- sudo npm install -g nodemon
+            >> cek versi
+                -- nodemon -v
         -- npm install express mysql2
     >> after that we need to make package.json
         -- npm init
-    >> copy this to package.json
-        {
-            "name": "day18",
-            "version": "1.0.0",
-            "description": "Coba express and mysql",
-            "main": "index.js",
-            "dependencies": {
-                "express": "^4.17.1",
-                "mysql": "^2.18.1",
-                 "nodemon": "^2.0.6"
-                },
-            "devDependencies": {},
-            "scripts": {
-                "dev": "nodemon index.js"
-                 },
-            "author": "Reza",
-            "license": "ISC"
-        }
+    >> dalam package.json tambahin di baris script
+        -- "dev": "nodemon index.js"
+               
+2. Buat file index.js dalam folder Day 18
+
+3. Buat 3 folder dalam Folder Day 18
+    >> controllers, models, routes
+
+4. Dalam folder routes buat transaksiRoutes.js
+
+5. Dalam folder controllers buat transaksiController.js
 
