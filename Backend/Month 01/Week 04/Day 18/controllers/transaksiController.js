@@ -27,8 +27,7 @@ const getAll = (req, res) => {
 
 // Get One Data
 const getOne = (req, res) => {
-  let sqlGetOne =
-    "SELECT t.id, p.nama as nama_pelanggan, b.nama as nama_barang, b.harga, pem.nama as nama_pemasok, t.waktu, t.jumlah, t.total FROM transaksi t JOIN barang b ON t.id_barang = b.id JOIN pelanggan p ON p.id = t.id_pelanggan JOIN pemasok pem ON b.id_pemasok = pem.id WHERE t.id = ?";
+  let sqlGetOne = `SELECT t.id, p.nama as nama_pelanggan, b.nama as nama_barang, pem.nama as nama_pemasok, b.harga, t.waktu, t.jumlah, t.total FROM transaksi t JOIN barang b ON t.id_barang = b.id JOIN pelanggan p ON p.id = t.id_pelanggan JOIN pemasok pem ON b.id_pemasok = pem.id WHERE t.id = ${req.params.id}`;
 
   connection.query(sqlGetOne, [req.params.id], (err, results) => {
     // If error, it will go to here
@@ -160,6 +159,7 @@ const deleteData = (req, res) => {
 
   // Run Query
   connection.query(sql, [req.params.id], (err, results) => {
+    // If error
     if (err) {
       return res.status(500).json({
         message: "Internal Server Error",
@@ -167,6 +167,7 @@ const deleteData = (req, res) => {
       });
     }
 
+    // If no error
     return res.status(200).json({
       message: "Success",
     });
