@@ -11,4 +11,5 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/transaksi", transaksiRoutes);
 
 // Server running
-app.listen(3000, () => console.log("Server running on 3000!"));
+let PORT = 3000 || process.env.PORT;
+app.listen(PORT, () => console.log(`Server running on ${ PORT }!`));
