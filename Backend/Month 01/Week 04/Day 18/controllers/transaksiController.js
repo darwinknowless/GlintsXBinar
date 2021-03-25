@@ -25,4 +25,24 @@ const getAll = (req, res) => {
   });
 };
 
-module.exports = { getAll };
+// Delete Data
+const deleteData = (req, res) => {
+  // Delete Query
+  let sql = "DELETE FROM transaksi WHERE id = ?";
+
+  // Run Query
+  connection.query(sql, [req.params.id], (err, results) => {
+    if (err) {
+      return res.status(500).json({
+        message: "Internal Server Error",
+        error: err,
+      });
+    }
+
+    return res.status(200).json({
+      message: "Success",
+    });
+  });
+};
+
+module.exports = { getAll, deleteData };
