@@ -50,7 +50,19 @@ INSERT INTO pelanggan(id, nama) VALUES
 INSERT INTO pemasok(nama) VALUES 
 	("Septian"),
 	("Najmul"),
+	("Ebit"),
+	("Bayu"),
+	("Alvian"),
+	("Lia"),
+	("Zulfikri"),
+	("Riyo"),
+	("Irvan"),
 	("Rahmat");
+
+INSERT INTO pemasok(id, nama) VALUES 
+	(20, "Gilang"),
+	(21, "Aldino"),
+	(22, "Shella");
 
 INSERT INTO barang(nama, harga, id_pemasok) VALUES 
 	("Pepsodent", 14500, 1),
@@ -66,13 +78,15 @@ INSERT INTO transaksi(id_barang, id_pelanggan, jumlah, total) VALUES
 /* SELECT */
 SELECT * FROM pelanggan;
 
+SELECT * FROM pelanggan WHERE id = 10;
+
 SELECT * FROM pemasok;
+
+SELECT * FROM pemasok WHERE id = 2;
 
 SELECT * FROM barang;
 
 SELECT * FROM transaksi;
-
-SELECT * FROM pelanggan WHERE id = 10;
 
 SELECT * FROM transaksi WHERE id = 3;
 /* END SELECT */ 
@@ -97,7 +111,9 @@ DROP TABLE pemasok; -- jika tidak bisa didelete, berarti data table digunakan ta
 /* END DROP TABLE/DATABASE */
 
 /* UPDATE DATA */
-UPDATE barang SET nama = "Sunsilk" WHERE id =2; -- Update 1 komponen data
+UPDATE pemasok SET nama = "Knowless" WHERE id = 1;
+
+UPDATE barang SET nama = "Sunsilk" WHERE id = 2; -- Update 1 komponen data
 
 UPDATE barang SET nama = "Phantene", harga = 50000 WHERE id =2; -- update lebih dari 2 komponen data
 /* END UPDATE DATA */
@@ -118,4 +134,7 @@ JOIN pemasok pem ON b.id_pemasok = pem.id
 /* SELECT LIKE */
 SELECT * FROM pelanggan WHERE nama LIKE '%bayu%';
 /* END SELECT LIKE */
+
+
+
 
