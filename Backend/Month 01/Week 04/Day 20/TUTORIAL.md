@@ -40,3 +40,4 @@
     >> sequelize db:migrate --env development
 
 
+7. membuat seeder/ dummy data
