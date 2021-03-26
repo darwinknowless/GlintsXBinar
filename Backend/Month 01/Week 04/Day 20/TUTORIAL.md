@@ -36,6 +36,7 @@
         timestamps: true, // Enable timestamp
         freezeTableName: true, // Because we use bahassa
 
-
+6. Migrasi
+    >> sequelize db:migrate --env development
 
 
