@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Transaksis', {
+    await queryInterface.createTable('transaksi', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -9,15 +9,19 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       id_barang: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       id_pelanggan: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       jumlah: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       total: {
+        allowNull: false,
         type: Sequelize.DECIMAL
       },
       createdAt: {
@@ -26,6 +30,10 @@ module.exports = {
       },
       updatedAt: {
         allowNull: false,
+        type: Sequelize.DATE
+      },
+      deletedAt: {
+        allowNull: true,
         type: Sequelize.DATE
       }
     });
