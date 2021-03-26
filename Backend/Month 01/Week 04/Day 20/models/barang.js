@@ -20,7 +20,10 @@ module.exports = (sequelize, DataTypes) => {
     image: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'Barang',
+    paranoid: true, // Enable sofdelete
+    timestamps: true, // Enable timestamp
+    freezeTableName: true, // Because we use bahassa
+    modelName: 'barang',
   });
   return Barang;
 };

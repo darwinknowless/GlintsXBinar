@@ -20,7 +20,10 @@ module.exports = (sequelize, DataTypes) => {
     total: DataTypes.DECIMAL
   }, {
     sequelize,
-    modelName: 'Transaksi',
+    paranoid: true, // Enable sofdelete
+    timestamps: true, // Enable timestamp
+    freezeTableName: true, // Because we use bahassa
+    modelName: 'transaksi',
   });
   return Transaksi;
 };

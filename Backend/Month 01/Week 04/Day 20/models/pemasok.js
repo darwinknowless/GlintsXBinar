@@ -17,7 +17,10 @@ module.exports = (sequelize, DataTypes) => {
     nama: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'Pemasok',
+    paranoid: true, // Enable sofdelete
+    timestamps: true, // Enable timestamp
+    freezeTableName: true, // Because we use bahassa
+    modelName: 'pemasok',
   });
   return Pemasok;
 };
