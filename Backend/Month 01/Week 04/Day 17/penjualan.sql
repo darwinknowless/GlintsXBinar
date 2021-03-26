@@ -115,6 +115,8 @@ DROP TABLE pemasok; -- jika tidak bisa didelete, berarti data table digunakan ta
 /* UPDATE DATA */
 UPDATE pemasok SET nama = "Knowless" WHERE id = 1;
 
+UPDATE pemasok SET id = 20, nama = "Ronin" WHERE id = 20;
+
 UPDATE barang SET nama = "Sunsilk" WHERE id = 2; -- Update 1 komponen data
 
 UPDATE barang SET nama = "Phantene", harga = 50000 WHERE id =2; -- update lebih dari 2 komponen data
