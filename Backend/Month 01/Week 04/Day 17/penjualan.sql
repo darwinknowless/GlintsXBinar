@@ -99,6 +99,8 @@ SELECT * FROM pelanggan ORDER BY nama DESC;
 /* END SELECT ORDER BY */ 
 
 /* DELETE DATA*/
+DELETE FROM pemasok WHERE id = 22;
+
 DELETE FROM pelanggan WHERE id = 10; /* Safe way to delete data */
 
 DELETE FROM pelanggan WHERE nama = "Lia"; /* Delete data dengan nama Lia */
