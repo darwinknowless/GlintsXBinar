@@ -25,9 +25,17 @@
     -- NOTE : Models & Creation Created
 
 
-4. Tambahkan ke setiap table migrasi
+4. Tambahkan ke setiap table migrasi di bawah update
     >> deletedAt: {
         allowNull: true,
         type: Sequelize.DATE
     }
+
+5. tambahkan ke setipa models kecuali index.js
+    >>  paranoid: true, // Enable sofdelete
+        timestamps: true, // Enable timestamp
+        freezeTableName: true, // Because we use bahassa
+
+
+
 
