@@ -83,11 +83,13 @@ const create = (req, res) => {
 
 // Update data pemasok
 const update = (req, res) => {
-  // Find barang to get the price
+  // Find pemasok by ID
   let sqlFindPemasok = `SELECT * FROM pemasok WHERE id = ${req.params.id}`;
   // Run Query
   connection.query(sqlFindPemasok, (err, results) => {
+    // Run query update
     let sqlUpdate = `UPDATE pemasok SET nama = ${req.body.nama} WHERE id = ${req.params.id}`;
+    // let sqlUpdate = `UPDATE pemasok SET id = ${req.params.id}, nama = ${req.body.nama} WHERE id = ${req.params.id}`;
     connection.query(sqlUpdate, (err, results) => {
       // If error
       if (err) {
