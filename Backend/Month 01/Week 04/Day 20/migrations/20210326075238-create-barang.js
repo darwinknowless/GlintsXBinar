@@ -10,6 +10,7 @@ module.exports = {
       },
       nama: {
         allowNull: false,
+        unique: true, // Tambahain ini
         type: Sequelize.STRING
       },
       harga: {
