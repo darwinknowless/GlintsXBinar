@@ -25,4 +25,9 @@
     -- NOTE : Models & Creation Created
 
 
+4. Tambahkan ke setiap table migrasi
+    >> deletedAt: {
+        allowNull: true,
+        type: Sequelize.DATE
+    }
 
