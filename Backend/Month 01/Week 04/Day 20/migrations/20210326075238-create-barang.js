@@ -10,7 +10,8 @@ module.exports = {
       },
       nama: {
         allowNull: false,
-        unique: true, // Tambahain ini
+        // Tambahain ini
+        unique: true, 
         type: Sequelize.STRING
       },
       harga: {
@@ -38,6 +39,19 @@ module.exports = {
         type: Sequelize.DATE
       }
     });
+    // Tambahin ini
+    await queryInterface.addConstraint("barang", { // Tambahin ini
+      fields: ["id_pemasok"],
+      type: "foreign key",
+      name: "custom_fkey_id_pemasok",
+      references: {
+      //Required field
+      table: "pemasok",
+      field: "id",
+      },
+      onDelete: "cascade",
+      onUpdate: "cascade",
+      }); 
   },
   down: async (queryInterface, Sequelize) => {
     await queryInterface.dropTable('Barangs');
