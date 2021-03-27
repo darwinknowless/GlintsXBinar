@@ -1,8 +1,8 @@
 // Import database connection
 const connection = require("../models");
 
-// Get all data pemasok (id, nama)
-const getAll = (req, res) => {
+//GET DATA PEMASOK ALL
+const getAllPem = (req, res) => {
   // Get all query
   let sql = "SELECT * FROM pemasok";
   // Run Query
@@ -22,8 +22,8 @@ const getAll = (req, res) => {
   });
 };
 
-// Get one pemasok data (input id)
-const getOne = (req, res) => {
+//GET DATA PEMASOK ONE
+const getOnePem = (req, res) => {
   // Get One Query
   let sql = `SELECT * FROM pemasok WHERE id = ${req.params.id}`;
   // Run Query
@@ -43,8 +43,8 @@ const getOne = (req, res) => {
   });
 };
 
-// Create data pemasok
-const create = (req, res) => {
+//ADD or CREATE DATA PEMASOK
+const createPem = (req, res) => {
   // Find pemasok
   let sqlFindPemasok = `SELECT * FROM pemasok WHERE id = ${req.params.id}`;
   // Run Query
@@ -81,8 +81,8 @@ const create = (req, res) => {
   });
 };
 
-// Update data pemasok
-const update = (req, res) => {
+//UPDATE DATA PEMASOK
+const updatePem = (req, res) => {
   // Find pemasok by ID
   let sqlFindPemasok = `SELECT * FROM pemasok WHERE id = ${req.params.id}`;
   // Run Query
@@ -119,8 +119,8 @@ const update = (req, res) => {
   });
 };
 
-// Delete data pemasok
-const deleteData = (req, res) => {
+//DELETE DATA PEMASOK
+const deletePem = (req, res) => {
   // Delete Query
   let sql = `DELETE FROM pemasok WHERE id = ${ req.params.id }`;
   // Run Query
@@ -139,4 +139,4 @@ const deleteData = (req, res) => {
   });
 };
 
-module.exports = { getAll, getOne, create, update, deleteData };
+module.exports = { getAllPem, getOnePem, createPem, updatePem, deletePem };
