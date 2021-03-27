@@ -1,20 +1,24 @@
-// Import database connection
+//Import database connection
 const connection = require("../models");
 
 //GET DATA PEMASOK ALL
 const getAllPem = (req, res) => {
-  // Get all query
+  
+  //Get all query
   let sql = "SELECT * FROM pemasok";
-  // Run Query
+  
+  //Run Query
   connection.query(sql, (err, results) => {
-    // If error
+    
+    //If error
     if (err) {
       return res.status(500).json({
         message: "Internal Server Error",
         error: err,
       });
     }
-    // If no error
+    
+    //If no error
     return res.status(200).json({
       message: "Success",
       data: results,
@@ -24,18 +28,22 @@ const getAllPem = (req, res) => {
 
 //GET DATA PEMASOK ONE
 const getOnePem = (req, res) => {
-  // Get One Query
+  
+  //Get One Query
   let sql = `SELECT * FROM pemasok WHERE id = ${req.params.id}`;
-  // Run Query
+  
+  //Run Query
   connection.query(sql, (err, results) => {
-    // If error
+    
+    //If error
     if (err) {
       return res.status(500).json({
         message: "Internal Server Error",
         error: err,
       });
     }
-    // If no error
+    
+    //If no error
     return res.status(200).json({
       message: "Success",
       data: results[0],
@@ -45,33 +53,42 @@ const getOnePem = (req, res) => {
 
 //ADD or CREATE DATA PEMASOK
 const createPem = (req, res) => {
-  // Find pemasok
+  
+  //Find pemasok
   let sqlFindPemasok = `SELECT * FROM pemasok WHERE id = ${req.params.id}`;
-  // Run Query
+  
+  //Run Query
   connection.query(sqlFindPemasok, (err, results) => {
-    // Create pemasok
+    
+    //Create pemasok
     let sqlCreate = `INSERT INTO pemasok(nama) VALUES ( ${req.body.nama} )`;
-    // Run Query
+    
+    //Run Query
     connection.query(sqlCreate, (err, results) => {
-      // If error
+      
+      //If error
       if (err) {
         return res.status(500).json({
           message: "Internal Server Error",
           error: err,
         });
       }
-      // If no error
+      
+      //If no error
       let sqlSelect = `SELECT * FROM pemasok WHERE id = ${results.insertId}`;
-      // Run select
+      
+      //Run select
       connection.query(sqlSelect, (err, results) => {
-        // If error
+        
+        //If error
         if (err) {
           return res.status(500).json({
             message: "Internal Server Error",
             error: err,
           });
         }
-        // If no error
+        
+        //If no error
         return res.status(201).json({
           message: "Success",
           data: results[0],
@@ -83,33 +100,42 @@ const createPem = (req, res) => {
 
 //UPDATE DATA PEMASOK
 const updatePem = (req, res) => {
-  // Find pemasok by ID
+  
+  //Find pemasok by ID
   let sqlFindPemasok = `SELECT * FROM pemasok WHERE id = ${req.params.id}`;
-  // Run Query
+  
+  //Run Query
   connection.query(sqlFindPemasok, (err, results) => {
-    // Run query update
+    
+    //Run query update
     let sqlUpdate = `UPDATE pemasok SET nama = ${req.body.nama} WHERE id = ${req.params.id}`;
-    // let sqlUpdate = `UPDATE pemasok SET id = ${req.params.id}, nama = ${req.body.nama} WHERE id = ${req.params.id}`;
+    
+    //let sqlUpdate = `UPDATE pemasok SET id = ${req.params.id}, nama = ${req.body.nama} WHERE id = ${req.params.id}`;
     connection.query(sqlUpdate, (err, results) => {
-      // If error
+      
+      //If error
       if (err) {
         return res.status(500).json({
           message: "Internal Server Error",
           error: err,
         });
       }
-      // If no error
+      
+      //If no error
       let sqlSelect = `SELECT * FROM pemasok WHERE id = ${req.params.id}`;
-      // Run select
+      
+      //Run select
       connection.query(sqlSelect, (err, results) => {
-        // If error
+        
+        //If error
         if (err) {
           return res.status(500).json({
             message: "Internal Server Error",
             error: err,
           });
         }
-        // If no error
+        
+        //If no error
         return res.status(201).json({
           message: "Success",
           data: results[0],
@@ -121,18 +147,22 @@ const updatePem = (req, res) => {
 
 //DELETE DATA PEMASOK
 const deletePem = (req, res) => {
-  // Delete Query
+  
+  //Delete Query
   let sql = `DELETE FROM pemasok WHERE id = ${ req.params.id }`;
-  // Run Query
+  
+  //Run Query
   connection.query(sql, [req.params.id], (err, results) => {
-    // If error
+    
+    //If error
     if (err) {
       return res.status(500).json({
         message: "Internal Server Error",
         error: err,
       });
     }
-    // If no error
+    
+    //If no error
     return res.status(200).json({
       message: "Success",
     });
