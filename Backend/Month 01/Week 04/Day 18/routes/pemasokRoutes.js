@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-// Import controller
+//Import controller
 const pemasokController = require("../controllers/pemasokController");
 
-// Define routes
+//Define routes
 router.get("/", pemasokController.getAllPem);
 router.post("/", pemasokController.createPem);
 router.get("/:id", pemasokController.getOnePem);
