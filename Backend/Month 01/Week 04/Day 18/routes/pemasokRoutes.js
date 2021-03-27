@@ -5,10 +5,10 @@ const router = express.Router();
 const pemasokController = require("../controllers/pemasokController");
 
 // Define routes
-router.get("/", pemasokController.getAll);
-router.post("/", pemasokController.create);
-router.get("/:id", pemasokController.getOne);
-router.put("/:id", pemasokController.update);
-router.delete("/:id", pemasokController.deleteData);
+router.get("/", pemasokController.getAllPem);
+router.post("/", pemasokController.createPem);
+router.get("/:id", pemasokController.getOnePem);
+router.put("/:id", pemasokController.updatePem);
+router.delete("/:id", pemasokController.deletePem);
 
 module.exports = router;
