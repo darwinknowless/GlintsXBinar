@@ -3,6 +3,11 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser"); // post body handler
 
+// Express
+const express = require("express");
+const app = express();
+const bodyParser = require("body-parser"); // post body handler
+
 // Import routes
 const transaksiRoutes = require("./routes/transaksiRoutes.js");
 
@@ -18,6 +23,7 @@ app.use(
 app.use(express.static("public"));
 
 require("./utils/associations"); // Import table relationship
+
 app.use("/transaksi", transaksiRoutes); // if accessing localhost:3000/transaksi/* we will go to transaksiRoutes
 
 // Server running
