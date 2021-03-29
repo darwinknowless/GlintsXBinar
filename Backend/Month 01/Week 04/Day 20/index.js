@@ -3,11 +3,6 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser"); // post body handler
 
-// Express
-const express = require("express");
-const app = express();
-const bodyParser = require("body-parser"); // post body handler
-
 // Import routes
 const transaksiRoutes = require("./routes/transaksiRoutes.js");
 
