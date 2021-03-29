@@ -1,7 +1,5 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Pemasok extends Model {
     /**
@@ -17,9 +15,9 @@ module.exports = (sequelize, DataTypes) => {
     nama: DataTypes.STRING
   }, {
     sequelize,
-    paranoid: true, // Enable sofdelete
-    timestamps: true, // Enable timestamp
-    freezeTableName: true, // Because we use bahassa
+    paranoid: true, // Activate soft delete
+    timestamps: true, // timestamps
+    freezeTableName: true, // because we use Indonesian
     modelName: 'pemasok',
   });
   return Pemasok;
