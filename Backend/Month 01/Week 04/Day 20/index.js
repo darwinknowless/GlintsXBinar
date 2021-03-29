@@ -20,4 +20,5 @@ app.use(express.static("public"));
 app.use("/transaksi", transaksiRoutes); // if accessing localhost:3000/transaksi/* we will go to transaksiRoutes
 
 // Server running
-app.listen(3000, () => console.log("server running on port 3000"));
+let PORT = 3000 || process.env.PORT;
+app.listen(PORT, () => console.log(`Server running on ${ PORT }!`));
