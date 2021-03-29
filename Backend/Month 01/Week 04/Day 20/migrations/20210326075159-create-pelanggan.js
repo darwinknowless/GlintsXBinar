@@ -2,7 +2,7 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('pelanggan', {
-      id: {
+      id: { // <-----ini Atribut/Colum
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,

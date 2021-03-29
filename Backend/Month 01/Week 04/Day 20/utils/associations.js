@@ -1,8 +1,9 @@
 const { pemasok, pelanggan, barang, transaksi } = require("../models"); // Import all models
 
-// pemasok and transaksi relationship
+// pemasok and barang relationship
 pemasok.hasMany(barang, { foreignKey: "id_pemasok" });
 barang.belongsTo(pemasok, { foreignKey: "id_pemasok" });
+// barang.belongsToMany(pemasok, { foreignKey: "id_pemasok" });
 
 // barang and transaksi relationship
 barang.hasMany(transaksi, { foreignKey: "id_barang" });
