@@ -25,7 +25,7 @@ class TransaksiController {
       });
 
       // If data is nothing
-      if (data.length === 0) {
+      if (data.length === 0) { // < ---- Validator
         return res.status(404).json({
           message: "Transaksi Not Found",
         });

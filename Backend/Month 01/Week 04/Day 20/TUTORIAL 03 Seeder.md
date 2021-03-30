@@ -5,11 +5,8 @@
     >> sequelize seed:generate --name add-data-transaksi
 
 2. isi file dummy dalam folder seeders dengan data contoh
-
 -- CONTOH DATA "edit seeders/add-data-pelanggan.js" --
-
 'use strict';
-
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('Pelanggan', [{
@@ -26,7 +23,6 @@ module.exports = {
       updatedAt: new Date(),
     }])
   },
-
   down: async (queryInterface, Sequelize) => {
     return queryInterface.bulkDelete('Pelanggan', null, {})
   }

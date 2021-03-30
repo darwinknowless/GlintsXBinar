@@ -23,7 +23,6 @@ require("./utils/associations");
 app.use("/barang", barangRoutes); // if accessing localhost:3000/barang/* we will go to barangRoutes
 app.use("/transaksi", transaksiRoutes); // if accessing localhost:3000/transaksi/* we will go to transaksiRoutes
 
-
 // Server running
 let PORT = 3000 || process.env.PORT;
 app.listen(PORT, () => console.log(`Server running on ${ PORT }!`));
