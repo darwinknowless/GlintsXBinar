@@ -1,24 +1,28 @@
+//Config environment
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
-const express = require("express");
-// Import router
+
+//Import express
+const express = require("express"); 
+
+//Import router
 const transaksiRoutes = require("./routes/transaksiRoutes");
 
-// Make express app
+//Make express app
 const app = express();
 
-// Body parser
-app.use(express.json()); // Enable json body
+//Enable body parser
+app.use(express.json()); //Enable json body
 app.use(
   express.urlencoded({
     extended: true,
   })
-); // support encoded bodies
+); //support encoded bodies
 
-// Make routes
+//Make routes
 app.use("/transaksi", transaksiRoutes);
 
-// Running server
+//Running server
 let PORT = 3000 || process.env.PORT;
 app.listen(PORT, () => console.log(`Server running on ${PORT}!`));

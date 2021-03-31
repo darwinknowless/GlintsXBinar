@@ -1,18 +1,24 @@
-const { MongoClient } = require("mongodb"); // Import mongodb
+//Import MongoClient
+const { MongoClient } = require("mongodb"); 
 
-const uri = process.env.MONGO_URI; // uri
+//Address of Cluster or Server (MongoDB)
+const uri = process.env.MONGO_URI; 
 
-// Make connection variable
+//Make new connection
 const connection = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-});
+}); 
 
+//Run the connection
 try {
-  connection.connect(); // Run the connection
-  console.log("MongoDB Connected!");
+  connection.connect();
+  //If connection succeed
+  console.log("MongoDB connected!");
 } catch (e) {
+  //If connection error
   console.error(e);
 }
 
-module.exports = connection; // Export connection
+//Export connection
+module.exports = connection;
