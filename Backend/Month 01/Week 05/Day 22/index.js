@@ -1,7 +1,7 @@
-//Config environment
+//Import dotenv
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
-});
+}); //Config environment
 
 //Import express
 const express = require("express"); 
