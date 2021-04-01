@@ -6,7 +6,7 @@ const express = require("express");
 const fileUpload = require("express-fileupload"); // Import express-fileupload
 
 // Import routes
-// const transaksiRoutes = require("./routes/transaksiRoutes");
+const transaksiRoutes = require("./routes/transaksiRoutes");
 
 // Make express app
 const app = express();
@@ -26,7 +26,7 @@ app.use(fileUpload());
 app.use(express.static("public"));
 
 // Make routes
-// app.use("/transaksi", transaksiRoutes);
+app.use("/transaksi", transaksiRoutes);
 
 //Running server
 let PORT = 3000 || process.env.PORT;
