@@ -1,25 +1,22 @@
 const mongoose = require("mongoose"); // Import mongoose
-const mongooseDelete = require("mongoose-delete"); // Import mongoose-delete
+const mongooseDelete = require("mongoose-delete"); // Package to enable soft delete
 
-const BarangSchema = new mongoose.Schema( // <---BarangSchema/Tabel
+const BarangSchema = new mongoose.Schema(
   {
     nama: {
       type: String,
-      unique: true,
       required: true,
+      unique: true,
     },
-
     harga: {
       type: Number,
       required: true,
     },
-
     pemasok: {
       type: mongoose.Schema.ObjectId,
       ref: "pemasok",
       required: true,
     },
-
     image: {
       type: String,
       default: null,
@@ -37,7 +34,7 @@ const BarangSchema = new mongoose.Schema( // <---BarangSchema/Tabel
   }
 );
 
-// Getter function for barang
+// Image getter
 function getImage(image) {
   return `/images/${image}`;
 }
@@ -45,5 +42,4 @@ function getImage(image) {
 // Enable soft delete
 BarangSchema.plugin(mongooseDelete, { overrideMethods: "all" });
 
-// Export barang models
-module.exports = mongoose.model("barang", BarangSchema, "barang"); 
+module.exports = mongoose.model("barang", BarangSchema, "barang"); // Export model

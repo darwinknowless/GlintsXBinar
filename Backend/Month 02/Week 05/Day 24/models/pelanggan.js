@@ -1,5 +1,5 @@
 const mongoose = require("mongoose"); // Import mongoose
-const mongooseDelete = require("mongoose-delete"); // Import mongoose-delete
+const mongooseDelete = require("mongoose-delete"); // Package to enable soft delete
 
 const PelangganSchema = new mongoose.Schema(
   {
@@ -7,11 +7,11 @@ const PelangganSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    
     photo: {
       type: String,
-      required: false,
       default: null,
+      required: false,
+      // Getter
       get: getPhoto,
     },
   },
@@ -24,7 +24,7 @@ const PelangganSchema = new mongoose.Schema(
   }
 );
 
-// Getter photo
+// Image getter
 function getPhoto(photo) {
   return `/images/${photo}`;
 }
@@ -32,5 +32,4 @@ function getPhoto(photo) {
 // Enable soft delete
 PelangganSchema.plugin(mongooseDelete, { overrideMethods: "all" });
 
-// Export barang models
-module.exports = mongoose.model("pelanggan", PelangganSchema, "pelanggan"); 
+module.exports = mongoose.model("pelanggan", PelangganSchema, "pelanggan"); // Export model

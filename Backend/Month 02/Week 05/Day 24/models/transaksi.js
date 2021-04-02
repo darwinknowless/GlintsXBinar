@@ -1,23 +1,20 @@
-const mongoose = require("mongoose");
-const mongooseDelete = require("mongoose-delete");
+const mongoose = require("mongoose"); // Import mongoose
+const mongooseDelete = require("mongoose-delete"); // Import mongoose-delete
 
 const TransaksiSchema = new mongoose.Schema(
   {
     barang: {
-      type: mongoose.Schema.Types.Mixed, //<---- mixed : boleh array/object (duplikasi data di table barang) salah satu data
+      type: mongoose.Schema.Types.Mixed,
       required: true,
     },
-
     pelanggan: {
-      type: mongoose.Schema.Types.Mixed, //<---- mixed : boleh array/object (duplikasi data di table pelanggan) salah satu data
+      type: mongoose.Schema.Types.Mixed,
       required: true,
     },
-
     jumlah: {
       type: Number,
       required: true,
     },
-
     total: {
       type: Number,
       required: true,
@@ -35,5 +32,4 @@ const TransaksiSchema = new mongoose.Schema(
 // Enable soft delete
 TransaksiSchema.plugin(mongooseDelete, { overrideMethods: "all" });
 
-// Export barang models
-module.exports = mongoose.model("transaksi", TransaksiSchema, "transaksi"); 
+module.exports = mongoose.model("transaksi", TransaksiSchema, "transaksi"); // Export model

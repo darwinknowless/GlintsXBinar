@@ -5,31 +5,28 @@ require("dotenv").config({
 const express = require("express");
 const fileUpload = require("express-fileupload"); // Import express-fileupload
 
-// Import routes
+// Import router
 const transaksiRoutes = require("./routes/transaksiRoutes");
-const pemasokRoutes = require("./routes/pemasokRoutes");
 
-// Make express app
+// Make app
 const app = express();
 
-// Body-parser to read req.body
-app.use(express.json()); // Enable req.body JSON type
+// Body parser
+app.use(express.json()); // Enable json req.body
 app.use(
   express.urlencoded({
     extended: true,
   })
-); // Support urlencode body
+); // Enable req.body urlencoded
 
-// To read form-data request
+// To read form-data
 app.use(fileUpload());
 
-// Set static file directory
+// Static folder (for images)
 app.use(express.static("public"));
 
 // Make routes
 app.use("/transaksi", transaksiRoutes);
-app.use("/pemasok", pemasokRoutes);
 
-//Running server
-let PORT = 3000 || process.env.PORT;
-app.listen(PORT, () => console.log(`Server running on ${PORT}!`));
+// Run server
+app.listen(3000, () => console.log("Server running on 3000"));
