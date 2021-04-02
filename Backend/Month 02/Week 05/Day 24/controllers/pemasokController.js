@@ -1,24 +1,22 @@
 const { ObjectId } = require("mongodb"); // Import ObjectId
 const connection = require("../models");
 const dbConnection = connection.db("penjualan"); // Connect to database penjualan
-const transaksi = dbConnection.collection("transaksi"); // Connect to table/collection transaksi
+const pemasok = dbConnection.collection("pemasok");
 
-class TransaksiController {
-  // Get All Data
+class PemasokController {
+  // TODO Get All Data
   async getAll(req, res) {
     try {
-      let data = await transaksi.find({}).toArray(); // Get all data from transaksi table
-
+      let data = await pemasok.find({}).toArray();
       // If no data
       if (data.length === 0) {
         return res.status(404).json({
-          message: "Transaksi Not Found",
+          message: "Pemasok Not Found",
         });
       }
-
       // If success
       return res.status(200).json({
-        message: "Success",
+        message: "Success Show All Pemasok",
         data,
       });
     } catch (e) {
@@ -30,14 +28,19 @@ class TransaksiController {
     }
   }
 
-  // Get One Data
+  // TODO One Data
   async getOne(req, res) {
     try {
       // Find one data
-      let data = await transaksi.findOne({
+      let data = await pemasok.findOne({
         _id: new ObjectId(req.params.id),
       });
-
+      // If data is null
+      if (data.length === 0) {
+        return res.status(404).json({
+          message: "Data Pemasok Not Found",
+        });
+      }
       // If success
       return res.status(200).json({
         message: "Success",
@@ -53,15 +56,12 @@ class TransaksiController {
     }
   }
 
-  // Create data
+  // TODO Create Data
   async create(req, res) {
     try {
-      // Insert data transaksi
-      let data = await transaksi.insertOne({
-        barang: req.body.barang,
-        pelanggan: req.body.pelanggan,
-        jumlah: req.body.jumlah,
-        total: req.body.total,
+      // Insert data pelanggan
+      let data = await pemasok.insertOne({
+        nama: req.body.nama,
       });
 
       // If success
@@ -79,28 +79,32 @@ class TransaksiController {
     }
   }
 
-  // Update data
+  // TODO Update Data
   async update(req, res) {
     try {
-      // Update data transaksi
-      await transaksi.updateOne(
+      // Update data pelanggan
+      await pemasok.updateOne(
         {
           _id: new ObjectId(req.params.id),
         },
         {
           $set: {
-            barang: req.body.barang,
-            pelanggan: req.body.pelanggan,
-            jumlah: req.body.jumlah,
-            total: req.body.total,
+            nama: req.body.nama,
           },
         }
       );
 
       // Find data that updated
-      let data = await transaksi.findOne({
+      let data = await pemasok.findOne({
         _id: new ObjectId(req.params.id),
       });
+
+      // If data is null
+      if (data === null) {
+        return res.status(404).json({
+          message: "Data Pemasok Not Found",
+        });
+      }
 
       // If success
       return res.status(200).json({
@@ -115,18 +119,24 @@ class TransaksiController {
       });
     }
   }
-
-  // Delete Data
+  // TODO Delete Data
   async delete(req, res) {
     try {
       // delete data depends on req.params.id
-      let data = await transaksi.deleteOne({
+      let data = await pemasok.deleteOne({
         _id: new ObjectId(req.params.id),
       });
 
+      // If data deleted is null
+      if (!data) {
+        return res.status(404).json({
+          message: "Pemasok Not Found",
+        });
+      }
+
       // If success
       return res.status(200).json({
-        message: "Success to delete transaksi",
+        message: "Success to delete pemasok",
       });
     } catch (e) {
       // If failed
@@ -138,4 +148,4 @@ class TransaksiController {
   }
 }
 
-module.exports = new TransaksiController();
+module.exports = new PemasokController();
