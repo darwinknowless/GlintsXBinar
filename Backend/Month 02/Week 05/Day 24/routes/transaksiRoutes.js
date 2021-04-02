@@ -1,14 +1,13 @@
-const express = require("express");
-
-// Import validator
-
-// Import controller
+const express = require("express"); // Import express
+const transaksiValidator = require("../middlewares/validators/transaksiValidator");
 const transaksiController = require("../controllers/transaksiController");
 
-// Make router
 const router = express.Router();
 
-// Get all transaksi
 router.get("/", transaksiController.getAll);
+router.get("/:id", transaksiController.getOne);
+router.post("/", transaksiValidator.create, transaksiController.create);
+router.put("/:id", transaksiValidator.update, transaksiController.update);
+router.delete("/:id", transaksiController.delete);
 
 module.exports = router;
