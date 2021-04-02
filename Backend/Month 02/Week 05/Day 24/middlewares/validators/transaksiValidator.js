@@ -3,7 +3,7 @@ const { ObjectId } = require("mongodb");
 const connection = require("../../models");
 
 module.exports.create = async (req, res, next) => {
-  const penjualan = connection.db("penjualan");
+  const penjualan = connection.db("penjualan_database");
   const transaksi = penjualan.collection("transaksi");
   try {
     console.log(ObjectId(req.body.id_barang));
@@ -46,7 +46,7 @@ module.exports.create = async (req, res, next) => {
 };
 
 module.exports.update = async (req, res, next) => {
-  const penjualan = connection.db("database_afternoon");
+  const penjualan = connection.db("penjualan_database");
   const transaksi = penjualan.collection("transaksi");
   console.log(ObjectId(req.body.id_barang));
   console.log(ObjectId(req.body.id_pelanggan));

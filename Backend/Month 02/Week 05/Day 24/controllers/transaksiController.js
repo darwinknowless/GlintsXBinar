@@ -3,7 +3,7 @@ const connection = require("../models");
 
 class TransaksiController {
   async getAll(req, res) {
-    const dbConnection = connection.db("penjualan");
+    const dbConnection = connection.db("penjualan_database");
     const transaksi = dbConnection.collection("transaksi");
 
     try {
@@ -25,7 +25,7 @@ class TransaksiController {
     }
   }
   async getOne(req, res) {
-    const dbConnection = connection.db("penjualan");
+    const dbConnection = connection.db("penjualan_database");
     const transaksi = dbConnection.collection("transaksi");
 
     try {
@@ -43,8 +43,8 @@ class TransaksiController {
       });
     }
   }
-  async create(req, res) {
-    const dbConnection = connection.db("penjualan");
+  async createData(req, res) {
+    const dbConnection = connection.db("penjualan_database");
     const transaksi = dbConnection.collection("transaksi");
 
     try {
@@ -65,8 +65,8 @@ class TransaksiController {
       });
     }
   }
-  async update(req, res) {
-    const dbConnection = connection.db("penjualan");
+  async updateData(req, res) {
+    const dbConnection = connection.db("penjualan_database");
     const transaksi = dbConnection.collection("transaksi");
 
     try {
@@ -97,8 +97,8 @@ class TransaksiController {
       });
     }
   }
-  async delete(req, res) {
-    const dbConnection = connection.db("penjualan");
+  async deleteData(req, res) {
+    const dbConnection = connection.db("penjualan_database");
     const transaksi = dbConnection.collection("transaksi");
 
     try {

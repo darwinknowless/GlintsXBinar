@@ -6,8 +6,8 @@ const router = express.Router();
 
 router.get("/", transaksiController.getAll);
 router.get("/:id", transaksiController.getOne);
-router.post("/", transaksiValidator.create, transaksiController.create);
-router.put("/:id", transaksiValidator.update, transaksiController.update);
-router.delete("/:id", transaksiController.delete);
+router.post("/", transaksiValidator.create, transaksiController.createData);
+router.put("/:id", transaksiValidator.update, transaksiController.updateData);
+router.delete("/:id", transaksiController.deleteData);
 
 module.exports = router;
