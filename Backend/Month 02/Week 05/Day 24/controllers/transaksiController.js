@@ -1,11 +1,14 @@
 const { ObjectId } = require("mongodb"); // Import ObjectId
-const connection = require("../models");
-const dbConnection = connection.db("penjualan"); // Connect to database penjualan
-const transaksi = dbConnection.collection("transaksi"); // Connect to table/collection transaksi
+const getDb = require("../utils/database").getDb;
 
 class TransaksiController {
   // Get All Data
   async getAll(req, res) {
+    const db = getDb();
+    const pemasok = db.collection("pemasok");
+    const barang = db.collection("barang");
+    const pelanggan = db.collection("pelanggan");
+    const transaksi = db.collection("transaksi");
     try {
       let data = await transaksi.find({}).toArray(); // Get all data from transaksi table
 
@@ -32,6 +35,11 @@ class TransaksiController {
 
   // Get One Data
   async getOne(req, res) {
+    const db = getDb();
+    const pemasok = db.collection("pemasok");
+    const barang = db.collection("barang");
+    const pelanggan = db.collection("pelanggan");
+    const transaksi = db.collection("transaksi");
     try {
       // Find one data
       let data = await transaksi.findOne({
@@ -44,7 +52,7 @@ class TransaksiController {
         data,
       });
     } catch (e) {
-      console.log(e)
+      console.log(e);
       // If failed
       return res.status(500).json({
         message: "Internal Server Error",
@@ -55,6 +63,11 @@ class TransaksiController {
 
   // Create data
   async create(req, res) {
+    const db = getDb();
+    const pemasok = db.collection("pemasok");
+    const barang = db.collection("barang");
+    const pelanggan = db.collection("pelanggan");
+    const transaksi = db.collection("transaksi");
     try {
       // Insert data transaksi
       let data = await transaksi.insertOne({
@@ -81,6 +94,11 @@ class TransaksiController {
 
   // Update data
   async update(req, res) {
+    const db = getDb();
+    const pemasok = db.collection("pemasok");
+    const barang = db.collection("barang");
+    const pelanggan = db.collection("pelanggan");
+    const transaksi = db.collection("transaksi");
     try {
       // Update data transaksi
       await transaksi.updateOne(
@@ -118,6 +136,11 @@ class TransaksiController {
 
   // Delete Data
   async delete(req, res) {
+    const db = getDb();
+    const pemasok = db.collection("pemasok");
+    const barang = db.collection("barang");
+    const pelanggan = db.collection("pelanggan");
+    const transaksi = db.collection("transaksi");
     try {
       // delete data depends on req.params.id
       let data = await transaksi.deleteOne({

@@ -1,10 +1,10 @@
 const validator = require("validator");
 const { ObjectId } = require("mongodb");
-const connection = require("../../models");
-const penjualan = connection.db("penjualan"); // Connect to penjualan database
-const transaksi = penjualan.collection("transaksi"); // Connect to transaksi collection / table
+const getDb = require("../../utils/database").getDb;
 
 exports.create = async (req, res, next) => {
+  const getDb = require("../../utils/database").getDb;
+  const penjualan = getDb();
   try {
     // Get barang and pelanggan
     let findData = await Promise.all([
@@ -57,6 +57,8 @@ exports.create = async (req, res, next) => {
 };
 
 exports.update = async (req, res, next) => {
+  const getDb = require("../../utils/database").getDb;
+  const penjualan = getDb();
   try {
     // Get barang and pelanggan
     let findData = await Promise.all([

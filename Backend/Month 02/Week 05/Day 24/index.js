@@ -29,4 +29,5 @@ app.use(express.static("public"));
 app.use("/transaksi", transaksiRoutes);
 
 // Run server
-app.listen(3000, () => console.log("Server running on 3000"));
+let PORT = 3000 || process.env.PORT;
+app.listen(PORT, () => console.log(`Server running on ${ PORT }!`));

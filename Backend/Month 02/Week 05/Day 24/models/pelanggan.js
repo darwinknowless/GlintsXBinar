@@ -21,6 +21,7 @@ const PelangganSchema = new mongoose.Schema(
       createdAt: "createdAt",
       updatedAt: "updatedAt",
     },
+    toJSON: { getters: true }, 
   }
 );
 
