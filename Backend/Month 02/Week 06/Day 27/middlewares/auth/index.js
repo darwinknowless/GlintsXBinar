@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt"); // Import bcrypt (excrypt and comparePassword)
 const JWTstrategy = require("passport-jwt").Strategy; // Import JWT Strategy
 const ExtractJWT = require("passport-jwt").ExtractJwt; // Import ExtractJWT
 const { user } = require("../../models"); // Import user model
-//! passport-local: sign ini with google,fb, else
+//! passport-local: lsign ini with google,fb, else
 
 // If user call this passport
 passport.use(
@@ -29,6 +29,7 @@ passport.use(
           message: "User can be created",
         });
       } catch (e) {
+        console.log(e);
         // If create user failed, it will make
         // err = null
         // user = false

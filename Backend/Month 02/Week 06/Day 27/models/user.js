@@ -3,7 +3,7 @@ const mongooseDelete = require("mongoose-delete"); // Package to enable soft del
 
 const UserSchema = new mongoose.Schema(
   {
-    nama: {
+    name: {
       type: String,
       required: true,
     },
