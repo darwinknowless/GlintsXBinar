@@ -16,6 +16,7 @@ const UserSchema = new mongoose.Schema(
     password: {
       type: String,
       required: true,
+      // fungsi set : sebelum data disimpan, data di encrypt,dll
       set: encryptPassword,
     },
     role: {
