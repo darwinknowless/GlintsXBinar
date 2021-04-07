@@ -17,7 +17,7 @@ router.post(
   "/signup",
   (req, res, next) => {
     // It will go to ../middlewares/auth/index.js -> passport.use("signup")
-    passport.authenticate("signup", { session: false }, (err, user, info) => {
+    passport.authenticate("signup", { /*jangka waktu login*/ session: false }, (err, user, info) => {
       // After go to ../middlewares/auth/index.js -> passport.use("signup")
       // It will bring the variable from done() function
       // Like err = null, user = false, info = { message: "User can't be creted" }
