@@ -5,6 +5,7 @@ const JWTstrategy = require("passport-jwt").Strategy; // Import JWT Strategy
 const ExtractJWT = require("passport-jwt").ExtractJwt; // Import ExtractJWT
 const { user } = require("../../models"); // Import user model
 
+//TODO: Signup
 exports.signup = (req, res, next) => {
   // It will go to ../middlewares/auth/index.js -> passport.use("signup")
   passport.authenticate("signup", { session: false }, (err, user, info) => {
@@ -72,6 +73,7 @@ passport.use(
   )
 );
 
+//TODO: Signin
 exports.signin = (req, res, next) => {
   // It will go to ../middlewares/auth/index.js -> passport.use("signup")
   passport.authenticate("signin", { session: false }, (err, user, info) => {
@@ -154,3 +156,6 @@ passport.use(
     }
   )
 );
+
+//TODO: Admin
+//TODO: User
