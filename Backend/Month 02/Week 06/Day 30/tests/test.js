@@ -9,35 +9,36 @@ beforeAll(async () => {
 
 //TODO: Test the auth
 describe("Auth Test", () => {
+  
   //TODO: Sign Up Test
   describe("/auth/signup POST", () => {
     it("It should create a user and return the token", async () => {
       const res = await request(app).post("/auth/signup").send({
-        email: "fahmialfareza97@gmail.com",
-        password: "Aneh1234!!",
-        confirmPassword: "Aneh1234!!",
-        name: "Fahmi Alfareza",
+        email: "darwin@esmondtech.com",
+        password: "12345678Pw_",
+        confirmPassword: "12345678Pw_",
+        name: "Darwin K",
       });
-
       expect(res.statusCode).toEqual(200);
       expect(res.body).toBeInstanceOf(Object);
       expect(res.body.message).toEqual("Success");
       expect(res.body).toHaveProperty("token");
     });
+
     //! Test The error
     it("It should error when create a user", async () => {
       const res = await request(app).post("/auth/signup").send({
-        email: "fahmialfareza97@gmail.com",
-        password: "Aneh1234!!",
-        confirmPassword: "Aneh1234!!",
-        name: "Fahmi Alfareza",
+        email: "darwin@esmondtech.com",
+        password: "12345678Pw_",
+        confirmPassword: "12345678Pw_",
+        name: "Darwin K",
       });
-
       expect(res.statusCode).toEqual(401);
       expect(res.body).toBeInstanceOf(Object);
       expect(res.body.message).toEqual("User can't be created");
     });
   });
+
   //TODO: Sign Up Test
   describe("/auth/signin POST", () => {
     it("It should return the token", async () => {
@@ -45,7 +46,6 @@ describe("Auth Test", () => {
         email: "fahmialfareza97@gmail.com",
         password: "Aneh1234!!",
       });
-
       expect(res.statusCode).toEqual(200);
       expect(res.body).toBeInstanceOf(Object);
       expect(res.body.message).toEqual("Success");
