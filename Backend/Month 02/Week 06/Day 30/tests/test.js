@@ -43,8 +43,8 @@ describe("Auth Test", () => {
   describe("/auth/signin POST", () => {
     it("It should return the token", async () => {
       const res = await request(app).post("/auth/signin").send({
-        email: "fahmialfareza97@gmail.com",
-        password: "Aneh1234!!",
+        email: "darwin@esmondtech.com",
+        password: "12345678Pw_",
       });
       expect(res.statusCode).toEqual(200);
       expect(res.body).toBeInstanceOf(Object);

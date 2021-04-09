@@ -31,6 +31,7 @@ app.use(express.static("public"));
 // Make routes
 app.use("/auth", authRoutes);
 app.use("/barang", barangRoutes);
+app.use("/pemasok", pemasokRoutes);
 app.use("/pelanggan", pelangganRoutes);
 app.use("/transaksi", transaksiRoutes);
 
@@ -40,7 +41,7 @@ if (process.env.NODE_ENV !== "test") {
   let PORT = 3000 || process.env.PORT;
   app.listen(PORT, () => console.log(`Server running on ${PORT}!`));
 }
-
+// Running server
 // let PORT = 3000 || process.env.PORT;
 // app.listen(PORT, () => console.log(`Server running on ${PORT}!`));
 module.exports = app;
