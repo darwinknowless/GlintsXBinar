@@ -8,6 +8,7 @@ const fileUpload = require("express-fileupload"); // Import express-fileupload
 // Import router
 const authRoutes = require("./routes/authRoutes");
 const barangRoutes = require("./routes/barangRoutes");
+// const pemasokRoutes = require("./routes/pemasokRoutes");
 const pelangganRoutes = require("./routes/pelangganRoutes");
 const transaksiRoutes = require("./routes/transaksiRoutes");
 
@@ -31,6 +32,7 @@ app.use(express.static("public"));
 // Make routes
 app.use("/auth", authRoutes);
 app.use("/barang", barangRoutes);
+// app.use("/pemasok", pemasokRoutes);
 app.use("/pelanggan", pelangganRoutes);
 app.use("/transaksi", transaksiRoutes);
 
