@@ -12,6 +12,18 @@ const auth = require("../middlewares/auth");
 // Make router
 const router = express.Router();
 
+//TODO: Grouping Routes (see below)
+router
+  .route("/")
+  .get(auth.adminOrUser, transaksiController.getAll)
+  .post(auth.admin, transaksiValidator.create, transaksiController.create);
+
+router
+  .route("/:id")
+  .get(auth.adminOrUser, transaksiValidator.getOne, transaksiController.getOne)
+  .put(auth.admin, transaksiValidator.update, transaksiController.update)
+  .delete(auth.admin, transaksiValidator.delete, transaksiController.delete);
+
 //TODO: One by One Routes (see below)
 // // Get all transaksi
 // router.get(
@@ -44,17 +56,5 @@ const router = express.Router();
 //     transaksiValidator.delete,
 //     transaksiController.delete
 //     );
-
-//TODO: Grouping Routes (see below)
-router
-  .route("/")
-  .get(auth.user, transaksiController.getAll)
-  .post(auth.admin, transaksiValidator.create, transaksiController.create);
-
-router
-  .route("/:id")
-  .get(auth.user, transaksiValidator.getOne, transaksiController.getOne)
-  .put(auth.admin, transaksiValidator.update, transaksiController.update)
-  .delete(auth.admin, transaksiValidator.delete, transaksiController.delete);
 
 module.exports = router;

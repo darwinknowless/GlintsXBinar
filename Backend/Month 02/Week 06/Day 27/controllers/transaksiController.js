@@ -20,7 +20,7 @@ class TransaksiController {
     } catch (e) {
       return res.status(500).json({
         message: "Internal Server Error",
-        error: e,
+        error: e.message,
       });
     }
   }
@@ -44,7 +44,7 @@ class TransaksiController {
     } catch (e) {
       return res.status(500).json({
         message: "Internal Server Error",
-        error: e,
+        error: e.message,
       });
     }
   }
@@ -52,31 +52,7 @@ class TransaksiController {
   //Create
   async create(req, res) {
     try {
-      //!this code below Move to Validator
-      /*let errors = [];
-      //Find barang & pelanggan
-      let findData = await Promise.all([
-        barang.findOne({ _id: req.body.id_barang }),
-        pelanggan.findOne({ _id: req.body.id_pelanggan }),
-      ]);
-      //If barang not found
-      if (!findData[0]) {
-        errors.push("Barang not found!");
-      }
-      //If pelanggan not found
-      if (!findData[1]) {
-        errors.push("Pelanggan not found!");
-      }
-      //If error
-      if (errors.length > 0) {
-        return res.status(400).json({
-          message: errors.join(", "),
-        });
-      }
-      //Calculate total
-      let total = eval(findData[0].harga * req.body.jumlah);
-      */ //!this code upside Move to Validator
-      // Create data
+      //Create data
       let data = await transaksi.create(req.body);
       // Or using this
       // let data = await transaksi.create({
@@ -94,7 +70,7 @@ class TransaksiController {
       console.log(e);
       return res.status(500).json({
         message: "Internal Server Error",
-        error: e,
+        error: e.message,
       });
     }
   }
@@ -122,7 +98,7 @@ class TransaksiController {
     } catch (e) {
       return res.status(500).json({
         message: "Internal Server Error",
-        error: e,
+        error: e.message,
       });
     }
   }
@@ -139,7 +115,7 @@ class TransaksiController {
     } catch (e) {
       return res.status(500).json({
         message: "Internal Server Error",
-        error: e,
+        error: e.message,
       });
     }
   }

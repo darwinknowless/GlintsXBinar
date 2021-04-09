@@ -7,8 +7,10 @@ class AuthController {
       // Get the req.user that has been created in the authRoutes
       // And create body variable
       const body = {
-        id: req.user._id,
-      };
+        user: {
+          id: req.user._id,
+        }
+      }
 
       // Create jwt token with { user: { id: req.user._id } } value
       // And the key is process.env.JWT_SECRET
